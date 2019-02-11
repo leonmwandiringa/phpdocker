@@ -14,7 +14,6 @@ Note: you may place the files elsewhere in your project. Make sure you modify th
 Dependencies:
 
   * Docker engine v1.13 or higher. Your OS provided package might be a little old, if you encounter problems, do upgrade. See [https://docs.docker.com/engine/installation](https://docs.docker.com/engine/installation)
-  * Docker compose v1.12 or higher. See [docs.docker.com/compose/install](https://docs.docker.com/compose/install/)
 
 Once you're done, simply `cd` to your project and run `docker-compose up -d`. This will initialise and start all the containers, then leave them running in the background.
 
@@ -24,7 +23,7 @@ You can access your application via **`localhost`**, if you're running the conta
 
 Service|Address outside containers
 ------|---------|-----------
-Webserver|[localhost:8080](http://localhost:8080)
+Webserver|[localhost:8080](http://localhost:8080) -- you can change in docker compose file to desired port
 
 ## Hosts within your environment ##
 
@@ -45,7 +44,6 @@ php-fpm|php-fpm|9000
   * View container logs: `docker-compose logs`
   * Execute command inside of container: `docker-compose exec SERVICE_NAME COMMAND` where `COMMAND` is whatever you want to run. Examples:
         * Shell into the PHP container, `docker-compose exec php-fpm bash`
-        * Run symfony console, `docker-compose exec php-fpm bin/console`
         * Open a mysql shell, `docker-compose exec mysql mysql -uroot -pCHOSEN_ROOT_PASSWORD`
 
 # Recommendations #
